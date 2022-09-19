@@ -1,0 +1,12 @@
+<section class="main-container">
+    <div class="location">
+        <h1>Scorebat API</h1>
+
+        <div class="box" *ngIf="videos$ | async; else loading">
+            <a *ngFor="let video of videos$ | async" href="{{ video.matchviewUrl }}" target="_blank">
+                <img [src]="video.thumbnail" alt="{{ video.title }}" title="{{ video.title }}">
+            </a>
+        </div>
+        <ng-template #loading>Cargando información...</ng-template>
+    </div>
+</section>
